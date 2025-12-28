@@ -23,10 +23,8 @@ h2{ margin: 0 0 6px; font-size: 30px; font-weight: 900; }
   padding: 16px 25px 5px;
 }
 
-/* Control del Padding */
 mat-card-content{ padding: 1px 20px 20px; }
 
-/* Grid del HTML */
 .top-grid{
   display: grid;
   grid-template-columns: 2fr 1fr;
@@ -35,7 +33,6 @@ mat-card-content{ padding: 1px 20px 20px; }
   margin-bottom: 16px;
 }
 
-/* Textos */
 .hero .hero-kicker{
   padding: 11px 20px 0;
   font-weight: 900;
@@ -62,6 +59,7 @@ mat-card-content{ padding: 1px 20px 20px; }
   color: rgba(229,231,235,.78);
   line-height: 1.6;
 }
+
 .hero2{
   color: rgba(229,231,235,.78);
   line-height: 1.5;
@@ -70,7 +68,6 @@ mat-card-content{ padding: 1px 20px 20px; }
 
 .hero-text strong{ color: rgba(255,255,255,.94); }
 
-/* Apartado de la Foto */
 .photo-wrap{ padding: 14px; }
 
 .photo-frame{
@@ -101,10 +98,8 @@ mat-card-content{ padding: 1px 20px 20px; }
   color: rgba(229,231,235,.8);
 }
 
-/* Wide Card */
 .wide{ margin-bottom: 16px; }
 
-/* “Apartado de Table */
 .table{ display: grid; gap: 15px; }
 
 .row{
@@ -128,16 +123,14 @@ mat-card-content{ padding: 1px 20px 20px; }
   line-height: 1.45;
 }
 
-/* Bottom Grid */
 .bottom-grid{
   display: grid;
   grid-template-columns: 1.5fr 1fr;
   gap: 20px;
 }
 
-/* Bullets */
 .bullets .bullet{
-  padding: 15px 10px 20px 8px ;
+  padding: 15px 10px 20px 8px;
   border-top: 1px solid rgba(255,255,255,.08);
 }
 .bullets .bullet:first-child{ border-top: 0; padding-top: 15px; }
@@ -145,7 +138,6 @@ mat-card-content{ padding: 1px 20px 20px; }
 .btitle{ font-weight: 900; margin-bottom: 4px; }
 .btext{ color: rgba(229,231,235,.78); line-height: 1.45; }
 
-/* Educacion */
 .edu{
   display: grid;
   gap: 12px;
@@ -185,7 +177,6 @@ mat-card-content{ padding: 1px 20px 20px; }
   font-size: 13px;
 }
 
-/* Listas */
 .list{
   margin: 0;
   padding-left: 20px;
@@ -194,7 +185,6 @@ mat-card-content{ padding: 1px 20px 20px; }
 }
 .list li{ margin: 10px 0; }
 
-/* Objective */
 .objective{
   color: rgba(229,231,235,.78);
   line-height: 1.5;
@@ -202,7 +192,6 @@ mat-card-content{ padding: 1px 20px 20px; }
   margin: 1px 0;
 }
 
-/* Diseño Responsive */
 @media (max-width: 980px){
   .top-grid{ grid-template-columns: 1fr; }
   .bottom-grid{ grid-template-columns: 1fr; }
@@ -210,8 +199,51 @@ mat-card-content{ padding: 1px 20px 20px; }
 }
 
 @media (max-width: 560px){
-  .row{ grid-template-columns: 1fr; }
-  .k{ opacity: .9; }
+  .page{
+    padding-top: 10px;
+  }
+
+  .photo-card{
+    order: -1;
+  }
+
+  .photo-meta{
+    font-size: 13px;
+    opacity: .75;
+  }
+
+  .hero-name{
+    font-size: 22px;
+  }
+
+  .hero-strong{
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .hero-text,
+  .hero2{
+    font-size: 13.5px;
+    line-height: 1.55;
+  }
+
+  .row{
+    grid-template-columns: 1fr;
+    padding: 12px 10px;
+    border-radius: 12px;
+    background: rgba(255,255,255,.03);
+  }
+
+  .table{
+    gap: 10px;
+  }
+
+  .k{
+    opacity: .9;
+    font-size: 13px;
+    margin-bottom: 4px;
+  }
+
   .photo-frame{
     max-height: 260px;
     aspect-ratio: 1 / 1;
@@ -219,4 +251,17 @@ mat-card-content{ padding: 1px 20px 20px; }
 
   .edu-item{ grid-template-columns: 44px 1fr; }
   .edu-logo{ width: 40px; height: 40px; border-radius: 10px; padding: 6px; }
+
+  .bottom-grid .card{
+    box-shadow: 0 20px 50px rgba(0,0,0,.35);
+  }
+
+  .bottom-grid .card:nth-child(1),
+  .bottom-grid .card:nth-child(2){
+    border-color: rgba(138,180,255,.35);
+  }
+
+  .section-title{
+    padding: 14px 20px 6px;
+  }
 }

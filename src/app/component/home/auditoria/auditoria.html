@@ -17,17 +17,19 @@
     </div>
 
     <div class="row" *ngFor="let it of items">
-      <div class="dt">{{ formatDate(it.iso) }}</div>
-      <div>
-        <span class="tag" [class.f]="it.type==='Feature'"
-              [class.x]="it.type==='Fix'"
-              [class.u]="it.type==='UI'"
-              [class.c]="it.type==='Content'">
-          {{ it.type }}
-        </span>
+      <div class="dt" data-label="Fecha y hora">{{ formatDate(it.iso) }}</div>
+
+      <div data-label="Tipo">
+    <span class="tag" [class.f]="it.type==='Feature'"
+          [class.x]="it.type==='Fix'"
+          [class.u]="it.type==='UI'"
+          [class.c]="it.type==='Content'">
+      {{ it.type }}
+    </span>
       </div>
-      <div class="ttl">{{ it.title }}</div>
-      <div class="desc">{{ it.description }}</div>
+
+      <div class="ttl" data-label="Cambio">{{ it.title }}</div>
+      <div class="desc" data-label="Detalle">{{ it.description }}</div>
     </div>
   </div>
 </div>

@@ -442,3 +442,112 @@
 .mdc-notched-outline__notch{
   border-top: 0 !important;
 }
+
+*,
+*::before,
+*::after{
+  box-sizing: border-box;
+}
+
+@media (max-width: 600px){
+
+  .page{
+    width: calc(100% - 24px);
+    padding: 18px 0 46px;
+  }
+
+  .title h2{
+    font-size: 26px;
+    margin-bottom: 10px;
+  }
+
+  .muted.small{
+    padding-left: 0;
+    margin-bottom: 16px;
+  }
+
+  .status{
+    width: 100%;
+    justify-content: flex-start;
+    gap: 8px;
+  }
+
+  .pill{
+    padding: 7px 10px;
+    font-size: 11.5px;
+  }
+
+  .row{
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .item.link{
+    grid-template-columns: 42px 1fr 18px;
+    padding: 12px;
+    border-radius: 14px;
+  }
+
+  .icon{
+    width: 42px;
+    height: 42px;
+    border-radius: 16px;
+  }
+
+  .meta .label{
+    font-size: 14px;
+  }
+
+  .meta .sub{
+    font-size: 12px;
+    line-height: 1.2;
+    word-break: break-word;
+  }
+
+  .form{
+    padding: 0;
+    gap: 12px;
+  }
+
+  .grid2{
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .formActions{
+    gap: 10px;
+  }
+
+  .send{
+    width: 100%;
+    justify-content: center;
+    min-height: 44px;
+  }
+
+  .ghost{
+    width: 100%;
+    justify-content: center;
+    min-height: 42px;
+  }
+
+  .ok{
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+.item.link{
+  min-height: 64px;
+}
+
+.item.link:visited{
+  color: inherit;
+}
+
+:host ::ng-deep button.mat-mdc-raised-button .mat-icon{
+  margin-right: 6px;
+}
+
+:host ::ng-deep textarea.mat-mdc-input-element{
+  resize: none;
+}

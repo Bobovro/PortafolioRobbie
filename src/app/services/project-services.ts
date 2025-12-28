@@ -29,6 +29,7 @@ export const PROJECTS = [
     ],
     links: [],
     long: [
+      'Proyecto MoviWallet:',
       'Colección de proyectos enfocados en frontend.',
       'UX, UI, responsive y micro-interacciones.',
     ],

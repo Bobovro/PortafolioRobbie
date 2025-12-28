@@ -210,3 +210,91 @@ h1{
   background: rgba(255,255,255,.04);
   padding: 10px;
 }
+
+:host, :host *, :host *::before, :host *::after{
+  box-sizing: border-box;
+}
+
+.page{
+  padding: 18px 14px 26px;
+}
+
+@media (max-width: 900px){
+  h1{
+    font-size: 34px;
+    line-height: 1.08;
+  }
+
+  .badge{
+    font-size: 12px;
+    padding: 8px 12px;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .bio{
+    margin: 0 0 16px;
+  }
+
+  .cta{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    align-items: stretch;
+  }
+
+  .cta a{
+    margin: 0 !important;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .cta a:last-child{
+    grid-column: 1 / -1;
+  }
+
+  .hero-card{
+    border-radius: 18px;
+  }
+
+  .chips{
+    gap: 10px;
+  }
+}
+
+@media (max-width: 900px){
+  .strip{
+    gap: 14px;
+  }
+
+  .cert-card{
+    min-height: auto;
+    padding: 16px;
+  }
+
+  .cert-thumb{
+    height: 190px;
+    margin-top: 10px;
+  }
+
+  .kpi{
+    font-size: 15px;
+  }
+
+  .cert-cta{
+    margin-top: 10px;
+  }
+}
+
+@media (hover: none){
+  .cert-card:hover{
+    transform: none;
+    box-shadow: none;
+  }
+  .cert-card:hover .cert-thumb img{
+    transform: none;
+    filter: none;
+  }
+}
