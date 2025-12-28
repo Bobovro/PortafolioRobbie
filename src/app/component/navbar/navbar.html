@@ -1,0 +1,33 @@
+<div class="shell">
+  <aside class="side">
+    <div class="side-head">
+      <div class="logo">RD</div>
+      <div class="who">
+        <div class="who-title">Portafolio</div>
+        <div class="who-name">Robbie Dulanto</div>
+      </div>
+    </div>
+
+    <nav class="side-nav">
+      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+        Home
+      </a>
+      <a routerLink="/about" routerLinkActive="active">About</a>
+      <a routerLink="/skills" routerLinkActive="active">Skills</a>
+      <a routerLink="/projects" routerLinkActive="active">Projects</a>
+      <a routerLink="/contact" routerLinkActive="active">Contact</a>
+    </nav>
+
+    <div class="side-foot">
+      <a class="mini" href="https://www.linkedin.com/in/robbie-dulanto/" target="_blank" rel="noreferrer">LinkedIn</a>
+      <span class="dot">•</span>
+      <a class="mini" href="https://github.com/Bobovro" target="_blank" rel="noreferrer">GitHub</a>
+    </div>
+  </aside>
+
+  <main class="main">
+    <div class="panel">
+      <router-outlet></router-outlet>
+    </div>
+  </main>
+</div>

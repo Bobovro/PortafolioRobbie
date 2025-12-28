@@ -1,0 +1,444 @@
+.page{
+  width: min(900px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 20px 0 60px;
+  color: #ffffff;
+}
+
+.head{
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.title h2{
+  margin: 0 0 13px;
+  font-size: 28px;
+  font-weight: 900;
+}
+
+.muted{
+  color: rgba(229,231,235,.72);
+  margin: 0;
+}
+
+.muted.small{
+  font-size: 13px;
+  margin-bottom: 22px;
+  padding: 0 0 0 10px;
+}
+
+/* Status */
+.status{
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.pill{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.12);
+  font-weight: 800;
+  font-size: 12px;
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease, background .18s ease;
+}
+
+.pill.subtle{
+  background: rgba(255,255,255,.04);
+  border-color: rgba(255,255,255,.08);
+  font-weight: 700;
+}
+
+/* Animaciones */
+@keyframes shineSweep{
+  from { left: -120%; }
+  to   { left: 140%; }
+}
+
+.pill::after,
+.item.link::after,
+.btn::after{
+  content: "";
+  position: absolute;
+  inset: -40%;
+  left: -120%;
+  width: 80%;
+  transform: rotate(25deg);
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255,255,255,.12) 35%,
+    rgba(147,197,253,.32) 50%,
+    rgba(255,255,255,.12) 65%,
+    transparent 100%
+  );
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .18s ease;
+}
+
+.pill:hover{
+  transform: translateY(-1px);
+  border-color: rgba(255,255,255,.35);
+  background: rgba(255,255,255,.09);
+  box-shadow: 0 0 0 1px rgba(255,255,255,.08), 0 10px 30px rgba(147,197,253,.12);
+}
+
+.pill:hover::after{
+  opacity: 1;
+  animation: shineSweep .75s ease forwards;
+}
+
+/* Cards */
+
+.card{
+  background: rgba(14, 40, 97, 0.25);
+  border: 1px solid rgba(255,255,255,.10);
+  border-radius: 18px;
+  box-shadow: 0 30px 90px rgba(0,0,0,.35);
+}
+
+.formCard{
+  margin-top: 18px;
+  padding: 0;
+}
+
+.env{
+  margin: 0;
+  padding: 0px 10px 1px 10px;
+}
+
+/* Links */
+
+.row{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.item{
+  padding: 14px;
+  border-radius: 14px;
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.12);
+}
+
+.item.link{
+  display: grid;
+  grid-template-columns: 40px 1fr 18px;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+  overflow: hidden;
+  transition: transform .18s ease, border-color .18s ease, background .18s ease, box-shadow .18s ease;
+}
+
+.item.link:hover{
+  transform: translateY(-2px);
+  border-color: rgba(255,255,255,.45);
+  background: rgba(255,255,255,.10);
+  box-shadow: 0 0 0 1px rgba(255,255,255,.08), 0 16px 40px rgba(0,0,0,.22);
+}
+
+.item.link:hover::after{
+  opacity: 1;
+  animation: shineSweep .85s ease forwards;
+}
+
+.icon{
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 20px;
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.14);
+}
+
+.meta .label{
+  font-weight: 900;
+  margin-bottom: 4px;
+}
+
+.meta .sub{
+  color: rgba(229,231,235,.75);
+  font-weight: 800;
+  font-size: 12px;
+}
+
+.go{
+  opacity: .85;
+}
+
+/* Boton Actions */
+.actions{
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
+
+.btn{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,.18);
+  text-decoration: none;
+  font-weight: 900;
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+  transition: transform .18s ease, background .18s ease, border-color .18s ease, box-shadow .18s ease;
+}
+
+.btn.secondary{
+  background: rgba(255,255,255,.06);
+}
+
+.btn.primary{
+  background: rgba(255,255,255,.14);
+  border-color: rgba(255,255,255,.35);
+}
+
+.btn:hover{
+  transform: translateY(-1px);
+  background: rgba(255,255,255,.18);
+  border-color: rgba(255,255,255,.35);
+  box-shadow: 0 0 0 1px rgba(255,255,255,.08), 0 14px 36px rgba(0,0,0,.22);
+}
+
+.btn:hover::after{
+  opacity: 1;
+  animation: shineSweep .85s ease forwards;
+}
+
+/* Forms */
+.form{
+  display: grid;
+  gap: 14px;
+  padding: 6px;
+}
+
+.grid2{
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 14px;
+}
+
+.field{
+  width: 100%;
+}
+
+.formActions{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 6px;
+}
+
+.send{
+  font-weight: 900;
+}
+
+/* Footer */
+.foot{
+  margin-top: 18px;
+  text-align: center;
+  font-size: 13px;
+  color: rgba(229,231,235,.65);
+}
+
+/* Overrides */
+/* Texto input / textarea */
+:host ::ng-deep .mat-mdc-input-element{
+  color: rgba(255, 255, 255, 0.91) !important;
+  caret-color: rgba(255, 255, 255, 0.91);
+}
+
+/* Placeholder */
+:host ::ng-deep .mat-mdc-input-element::placeholder{
+  color: rgba(255, 255, 255, 0.89) !important;
+}
+
+/* Label */
+:host ::ng-deep .mdc-floating-label {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+/* Label focus */
+:host ::ng-deep
+.mat-mdc-form-field.mat-focused
+.mdc-floating-label{
+  color: rgb(255, 255, 255) !important;
+}
+
+/* Bordes outline */
+:host ::ng-deep .mdc-notched-outline__leading,
+:host ::ng-deep .mdc-notched-outline__notch,
+:host ::ng-deep .mdc-notched-outline__trailing {
+  border-color: rgba(116, 128, 195, 0.71) !important;
+}
+
+/* Hover */
+:host ::ng-deep
+.mat-mdc-form-field:hover
+.mdc-notched-outline__leading,
+:host ::ng-deep
+.mat-mdc-form-field:hover
+.mdc-notched-outline__notch,
+:host ::ng-deep
+.mat-mdc-form-field:hover
+.mdc-notched-outline__trailing{
+  border-color: rgb(197, 199, 216) !important;
+}
+
+/* Focus */
+:host ::ng-deep
+.mat-mdc-form-field.mat-focused
+.mdc-notched-outline__leading,
+:host ::ng-deep
+.mat-mdc-form-field.mat-focused
+.mdc-notched-outline__notch,
+:host ::ng-deep
+.mat-mdc-form-field.mat-focused
+.mdc-notched-outline__trailing{
+  border-color: rgb(255, 255, 255) !important;
+  border-width: 2px;
+}
+
+/* Error */
+:host ::ng-deep .mat-mdc-form-field-error{
+  color: #f16666 !important;
+}
+
+:host ::ng-deep
+.mat-mdc-form-field textarea
+~ .mdc-notched-outline
+.mdc-notched-outline__notch{
+  border-top: 0 !important;
+}
+
+/* Boton Enviar */
+/* Base */
+:host ::ng-deep button.mat-mdc-raised-button{
+  border: 1px solid rgba(255,255,255,.45) !important;
+  color: #ffffff !important;
+  background: rgba(255,255,255,.12) !important;
+  transition: transform .15s ease, background .15s ease, border-color .15s ease, box-shadow .15s ease !important;
+  will-change: transform;
+}
+
+/* Hover (igual que ghost) */
+:host ::ng-deep button.mat-mdc-raised-button:hover{
+  transform: translateY(-1px) !important;
+  border-color: rgba(255,255,255,.70) !important;
+  background: rgba(255,255,255,.18) !important;
+  box-shadow: 0 10px 24px rgba(0,0,0,.25) !important;
+}
+
+/* Disabled */
+:host ::ng-deep button.mat-mdc-raised-button:disabled{
+  transform: none !important;
+  border: 1px solid rgba(255,255,255,.25) !important;
+  color: rgba(255,255,255,.55) !important;
+  background: rgba(255,255,255,.06) !important;
+  box-shadow: none !important;
+}
+
+/* Boton Limpiar */
+.ghost{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 10px 14px;
+  border-radius: 14px;
+
+  border: 1px solid rgba(255,255,255,.35) !important;
+  background: rgba(255,255,255,.06) !important;
+
+  color: rgba(255,255,255,.92) !important;
+  font-weight: 900 !important;
+
+  transition: transform .15s ease, background .15s ease, border-color .15s ease, box-shadow .15s ease;
+  will-change: transform;
+}
+
+.ghost:hover{
+  transform: translateY(-1px);
+  background: rgba(255,255,255,.10) !important;
+  border-color: rgba(255,255,255,.70) !important;
+  box-shadow: 0 10px 24px rgba(0,0,0,.20);
+}
+
+:host ::ng-deep button.ghost.mat-mdc-button{
+  border-radius: 14px !important;
+  border: 1px solid rgba(255,255,255,.35) !important;
+  background: rgba(255,255,255,.06) !important;
+}
+
+:host ::ng-deep button.mat-mdc-raised-button,
+:host ::ng-deep button.ghost.mat-mdc-button{
+  min-height: 40px;
+}
+
+/* Responsive */
+
+@media (max-width: 900px){
+  .head{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .status{
+    justify-content: flex-start;
+  }
+
+  .row{
+    grid-template-columns: 1fr;
+  }
+
+  .grid2{
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Autofill */
+
+:host ::ng-deep input.mat-mdc-input-element:-webkit-autofill,
+:host ::ng-deep textarea.mat-mdc-input-element:-webkit-autofill,
+:host ::ng-deep input.mat-mdc-input-element:-webkit-autofill:hover,
+:host ::ng-deep textarea.mat-mdc-input-element:-webkit-autofill:hover,
+:host ::ng-deep input.mat-mdc-input-element:-webkit-autofill:focus,
+:host ::ng-deep textarea.mat-mdc-input-element:-webkit-autofill:focus{
+  -webkit-text-fill-color: rgba(255,255,255,0.95) !important;
+  caret-color: rgba(255,255,255,0.95) !important;
+
+  -webkit-box-shadow: 0 0 0px 1000px rgba(17,24,39,0.75) inset !important;
+  box-shadow: 0 0 0px 1000px rgba(17,24,39,0.75) inset !important;
+
+  transition: background-color 9999s ease-in-out 0s !important;
+}
+
+:host ::ng-deep
+.mat-mdc-form-field textarea
+~ .mdc-notched-outline
+.mdc-notched-outline__notch{
+  border-top: 0 !important;
+}

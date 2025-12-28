@@ -1,0 +1,222 @@
+.page{
+  width: min(1100px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 15px 0 60px;
+  color: #fff;
+}
+
+h2{ margin: 0 0 6px; font-size: 30px; font-weight: 900; }
+.muted{ color: rgba(229,231,235,.72); margin: 0 0 18px; }
+
+.card{
+  border-radius: 18px;
+  background: rgba(8, 16, 60, 0.35);
+  border: 1px solid rgba(255,255,255,.14);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 30px 90px rgba(0,0,0,.35);
+  color: #fff;
+}
+
+.section-title{
+  font-weight: 900;
+  font-size: 16px;
+  padding: 16px 25px 5px;
+}
+
+/* Control del Padding */
+mat-card-content{ padding: 1px 20px 20px; }
+
+/* Grid del HTML */
+.top-grid{
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 16px;
+  align-items: stretch;
+  margin-bottom: 16px;
+}
+
+/* Textos */
+.hero .hero-kicker{
+  padding: 11px 20px 0;
+  font-weight: 900;
+  opacity: .85;
+  font-size: 12px;
+  letter-spacing: .6px;
+  margin: 0;
+}
+
+.hero-name{
+  font-size: 26px;
+  font-weight: 900;
+  margin: 1px 0 8px;
+}
+
+.hero-strong{
+  margin: 0 0 10px;
+  color: rgba(229,231,235,.92);
+  font-weight: 800;
+}
+
+.hero-text{
+  margin: 0px 10px 10px 0px;
+  color: rgba(229,231,235,.78);
+  line-height: 1.6;
+}
+.hero2{
+  color: rgba(229,231,235,.78);
+  line-height: 1.5;
+  padding: 0 0 20px 0;
+}
+
+.hero-text strong{ color: rgba(255,255,255,.94); }
+
+/* Apartado de la Foto */
+.photo-wrap{ padding: 14px; }
+
+.photo-frame{
+  border-radius: 18px;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.12);
+  overflow: hidden;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  max-height: 360px;
+  width: 100%;
+  display: grid;
+  place-items: center;
+}
+
+.photo{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.photo-meta{
+  margin-top: 10px;
+  font-size: 15px;
+  font-weight: 900;
+  text-align: center;
+  color: rgba(229,231,235,.8);
+}
+
+/* Wide Card */
+.wide{ margin-bottom: 16px; }
+
+/* “Apartado de Table */
+.table{ display: grid; gap: 15px; }
+
+.row{
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 11px;
+  align-items: start;
+  padding: 10px;
+  border-top: 1px solid rgba(255,255,255,.08);
+}
+
+.row:first-child{ border-top: 0; padding-top: 18px; }
+
+.k{
+  font-weight: 900;
+  color: rgba(255,255,255,.88);
+}
+
+.v{
+  color: rgba(229,231,235,.78);
+  line-height: 1.45;
+}
+
+/* Bottom Grid */
+.bottom-grid{
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 20px;
+}
+
+/* Bullets */
+.bullets .bullet{
+  padding: 15px 10px 20px 8px ;
+  border-top: 1px solid rgba(255,255,255,.08);
+}
+.bullets .bullet:first-child{ border-top: 0; padding-top: 15px; }
+
+.btitle{ font-weight: 900; margin-bottom: 4px; }
+.btext{ color: rgba(229,231,235,.78); line-height: 1.45; }
+
+/* Educacion */
+.edu{
+  display: grid;
+  gap: 12px;
+}
+
+.edu-item{
+  padding: 12px 0;
+  border-top: 1px solid rgba(255,255,255,.08);
+  display: grid;
+  grid-template-columns: 70px 1fr;
+  gap: 12px;
+  align-items: center;
+}
+.edu-item:first-child{ border-top: 0; padding-top: 10px; }
+
+.edu-logo{
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  object-fit: contain;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  padding: 8px;
+}
+
+.edu-text{ min-width: 0; }
+
+.edu-where{ font-weight: 900; }
+.edu-what{ color: rgba(229,231,235,.78); margin-top: 2px; }
+.edu-when{ color: rgba(229,231,235,.60); font-size: 12px; margin-top: 2px; }
+
+.edu-note{
+  margin-top: 6px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255,255,255,.08);
+  color: rgba(229,231,235,.7);
+  font-size: 13px;
+}
+
+/* Listas */
+.list{
+  margin: 0;
+  padding-left: 20px;
+  color: rgba(229,231,235,.78);
+  line-height: 1.55;
+}
+.list li{ margin: 10px 0; }
+
+/* Objective */
+.objective{
+  color: rgba(229,231,235,.78);
+  line-height: 1.5;
+  padding: 10px 25px 10px 25px;
+  margin: 1px 0;
+}
+
+/* Diseño Responsive */
+@media (max-width: 980px){
+  .top-grid{ grid-template-columns: 1fr; }
+  .bottom-grid{ grid-template-columns: 1fr; }
+  .photo-frame{ max-height: 500px; }
+}
+
+@media (max-width: 560px){
+  .row{ grid-template-columns: 1fr; }
+  .k{ opacity: .9; }
+  .photo-frame{
+    max-height: 260px;
+    aspect-ratio: 1 / 1;
+  }
+
+  .edu-item{ grid-template-columns: 44px 1fr; }
+  .edu-logo{ width: 40px; height: 40px; border-radius: 10px; padding: 6px; }
+}

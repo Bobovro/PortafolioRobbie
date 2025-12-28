@@ -1,0 +1,137 @@
+<div class="page">
+
+  <div class="head">
+    <div class="title">
+      <h2>Projects</h2>
+      <p class="muted">
+        Una selección de proyectos donde aplico frontend, backend y datos <strong>(Aún en construcción, estoy actualizandolo para mejorar y añadir los proyectos. Estará terminado al 100% el 10 de enero con todos los proyectos dentro).</strong>
+      </p>
+    </div>
+
+    <div class="filters">
+      @for (t of tags; track t) {
+        <button
+          class="chip"
+          [class.active]="selected === t"
+          (click)="setTag(t)">
+          {{ t === 'All' ? 'Todos' : t }}
+        </button>
+      }
+    </div>
+  </div>
+
+  <div class="grid">
+    @for (p of filtered; track p.title) {
+      <mat-card class="card">
+
+        <mat-card-content>
+
+          <div class="cardTop">
+            <div class="icon">
+              <mat-icon>{{ p.icon }}</mat-icon>
+            </div>
+
+            <div class="meta">
+              <div class="h3">{{ p.title }}</div>
+              <div class="sub">{{ p.stack }}</div>
+            </div>
+
+            <span class="badge">{{ p.tag }}</span>
+          </div>
+
+          <p class="desc">{{ p.subtitle }}</p>
+
+          <ul class="bullets">
+            @for (b of p.bullets; track b) {
+              <li>{{ b }}</li>
+            }
+          </ul>
+
+          <div class="links">
+
+            <!-- Links normales -->
+            @for (l of p.links; track l.label) {
+              <a class="linkBtn" [href]="l.url" target="_blank">
+                <mat-icon class="mini">{{ l.icon }}</mat-icon>
+                <span>{{ l.label }}</span>
+              </a>
+            }
+
+            <!-- Frontend -->
+            @if (p.tag === 'Frontend') {
+              <button class="linkBtn" (click)="openModal(p)">
+                <mat-icon class="mini">grid_view</mat-icon>
+                <span>Ver proyectos</span>
+              </button>
+            }
+
+          </div>
+
+        </mat-card-content>
+      </mat-card>
+    }
+  </div>
+
+</div>
+
+<!-- MODAL -->
+@if (modalOpen && modalProject) {
+  <div class="modalOverlay" (click)="closeModal()">
+    <div class="modalPanel" (click)="$event.stopPropagation()">
+
+      <div class="modalTop">
+        <div>
+          <div class="modalH">{{ modalProject.title }}</div>
+          <div class="modalSub">{{ modalProject.stack }}</div>
+        </div>
+        <button class="x" (click)="closeModal()">✕</button>
+      </div>
+
+      <div class="modalBody">
+
+        <p class="muted" *ngFor="let t of modalProject.long">{{ t }}</p>
+
+        <div class="miniGrid">
+          @for (c of modalProject.children; track c.title) {
+            <article class="miniCard">
+
+              <div
+                class="miniThumb"
+                [style.background-image]="'url(' + c.cover + ')'">
+              </div>
+
+              <div class="miniPanel">
+                <div class="miniTop">
+                  <mat-icon>{{ c.icon }}</mat-icon>
+                  <div>
+                    <div class="miniH">{{ c.title }}</div>
+                    <div class="miniSub">{{ c.stack }}</div>
+                  </div>
+                </div>
+
+                <p>{{ c.subtitle }}</p>
+
+                <ul>
+                  @for (b of c.bullets; track b) {
+                    <li>{{ b }}</li>
+                  }
+                </ul>
+
+                <div class="links">
+                  @for (l of c.links; track l.label) {
+                    <a class="linkBtn" [href]="l.url" target="_blank">
+                      <mat-icon class="mini">{{ l.icon }}</mat-icon>
+                      <span>{{ l.label }}</span>
+                    </a>
+                  }
+                </div>
+              </div>
+
+            </article>
+          }
+        </div>
+
+      </div>
+    </div>
+  </div>
+}

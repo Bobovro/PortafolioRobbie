@@ -1,0 +1,53 @@
+<div class="page">
+  <h2>Skills</h2>
+  <p class="muted">Tecnologías que domino, aplico y conozco.</p>
+
+  <!-- Cuadros -->
+  <div class="skills-grid">
+    <mat-card class="skills-card" *ngFor="let group of groups">
+      <mat-card-title class="skills-title">{{ group.title }}</mat-card-title>
+
+      <mat-card-content class="skills-content">
+        <div class="icons-grid">
+          <button
+            type="button"
+            class="icon-item"
+            *ngFor="let s of group.items"
+            (click)="selectSkill(s)"
+            (keydown.enter)="selectSkill(s)"
+            (keydown.space)="selectSkill(s)"
+            [class.active]="selected?.name === s.name"
+            aria-label="Ver detalle de {{ s.name }}"
+          >
+            <img class="icon" [src]="s.icon" [alt]="s.name">
+            <div class="label" title="{{ s.name }}">{{ s.name }}</div>
+          </button>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <!-- Panel -->
+  <section class="detail-card" *ngIf="selected as s">
+    <div class="detail-top">
+      <img class="detail-icon" [src]="s.icon" [alt]="s.name">
+      <div class="detail-meta">
+        <div class="detail-name">{{ s.name }}</div>
+        <div class="detail-level">{{ s.level }}</div>
+      </div>
+
+      <div class="detail-percent">{{ s.percent }}%</div>
+    </div>
+
+    <div class="progress">
+      <div class="progress-track">
+        <div class="progress-fill" [style.--p]="s.percent + '%'"></div>
+      </div>
+    </div>
+
+    <div class="detail-subtitle">Lo que puedo hacer:</div>
+    <ul class="detail-list">
+      <li *ngFor="let d of s.details">{{ d }}</li>
+    </ul>
+  </section>
+</div>

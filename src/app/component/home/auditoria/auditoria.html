@@ -1,0 +1,33 @@
+<div class="page">
+  <div class="head">
+    <div>
+      <h2>Auditoría del Portafolio</h2>
+      <p class="muted">Historial de cambios con fecha y hora.</p>
+    </div>
+
+    <a class="back" routerLink="/home">Volver</a>
+  </div>
+
+  <div class="grid">
+    <div class="row header">
+      <div>Fecha y hora</div>
+      <div>Tipo</div>
+      <div>Cambio</div>
+      <div>Detalle</div>
+    </div>
+
+    <div class="row" *ngFor="let it of items">
+      <div class="dt">{{ formatDate(it.iso) }}</div>
+      <div>
+        <span class="tag" [class.f]="it.type==='Feature'"
+              [class.x]="it.type==='Fix'"
+              [class.u]="it.type==='UI'"
+              [class.c]="it.type==='Content'">
+          {{ it.type }}
+        </span>
+      </div>
+      <div class="ttl">{{ it.title }}</div>
+      <div class="desc">{{ it.description }}</div>
+    </div>
+  </div>
+</div>

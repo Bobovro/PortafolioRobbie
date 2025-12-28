@@ -1,0 +1,128 @@
+<div class="page">
+  <section class="hero">
+    <div class="hero-left">
+      <div class="badge">#OpenToWork · Software · Data · Security</div>
+
+      <h1>Robbie James Dulanto Trujillo</h1>
+      <p class="headline">
+        Estudiante de Ingeniería de Sistemas de Información - Quinto Superior
+      </p>
+
+      <p class="bio">
+        Desarrollo aplicaciones web con enfoque en buenas prácticas, arquitectura clara y soluciones
+        orientadas a datos, utilizando Angular, Spring Boot y SQL.
+        Tengo experiencia en análisis y visualización de datos con Excel (VBA), Power BI y Python,
+        aplicando automatización y generación de reportes para apoyar la toma de decisiones.
+        Además, cuento con conocimientos en ciberseguridad enfocados en la protección de la información
+        y buenas prácticas de seguridad en aplicaciones. Actualmente busco prácticas preprofesionales
+        o posiciones junior.
+      </p>
+
+      <div class="cta">
+        <a mat-raised-button color="primary" href="https://www.linkedin.com/in/robbie-dulanto/" target="_blank" rel="noreferrer">
+          LinkedIn
+        </a>
+        <a mat-raised-button color="accent" href="https://github.com/Bobovro" target="_blank" rel="noreferrer">
+          GitHub
+        </a>
+        <a
+          mat-raised-button
+          color="warn"
+          href="/me/CV.pdf"
+          download="CV_RobbieDulanto.pdf"
+          target="_blank"
+        >
+          Descargar CV
+        </a>
+      </div>
+    </div>
+
+    <mat-card class="hero-card">
+      <mat-card-header>
+        <mat-card-title>Resumen de lo que aporto:</mat-card-title>
+      </mat-card-header>
+
+      <mat-card-content>
+        <ul class="list">
+          <li>
+            <strong>Frontend:</strong>
+            Angular y TypeScript, desarrollo de componentes reutilizables,
+            routing y manejo de estado con RxJS.
+          </li>
+
+          <li>
+            <strong>Backend:</strong>
+            Spring Boot, diseño de APIs REST, autenticación básica con JWT
+            y buenas prácticas de desarrollo.
+          </li>
+
+          <li>
+            <strong>Análisis de datos:</strong>
+            SQL, Excel (VBA), Power BI y Python para análisis,
+            automatización y visualización de información.
+          </li>
+
+          <li>
+            <strong>Ciberseguridad:</strong>
+            Buenas prácticas de protección de la información,
+            control de accesos y seguridad básica en aplicaciones.
+          </li>
+
+          <li>
+            <strong>Forma de trabajo:</strong>
+            Trabajo por sprints, control de versiones con Git/GitHub
+            y enfoque colaborativo.
+          </li>
+        </ul>
+
+        <div class="chips">
+          <span class="chip">Angular</span>
+          <span class="chip">TypeScript</span>
+          <span class="chip">Spring Boot</span>
+          <span class="chip">SQL</span>
+          <span class="chip">Power BI</span>
+          <span class="chip">Excel VBA</span>
+          <span class="chip">Python</span>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </section>
+
+  <section class="strip">
+    <div class="strip-item cert-card audit-card" (click)="goAudit()">
+      <div class="kpi">Auditoría del Portafolio Web</div>
+
+      <div class="cert-thumb">
+        <img src="/images/auditoria.jpg" alt="Auditoría">
+      </div>
+
+      <div class="cert-cta">
+        Ver cambios <span class="arrow">→</span>
+      </div>
+    </div>
+
+    <div class="strip-item cert-card map-card" (click)="openMap()">
+      <div class="kpi">Ubicación (Mapa de Referencia)</div>
+
+      <div class="cert-thumb">
+        <img src="/images/peru.jpg" alt="Mapa Lima">
+      </div>
+
+      <div class="cert-cta">
+        Ver mapa completo <span class="arrow">→</span>
+      </div>
+    </div>
+
+    <div class="strip-item cert-card" routerLink="/home/certificaciones">
+      <div class="kpi">Certificaciones y Constancias</div>
+
+      <div class="cert-thumb">
+        <img src="/images/ejemplo.jpg" alt="Certificación" height="807" width="1051">
+      </div>
+
+      <div class="cert-cta">
+        Ver galería <span class="arrow">→</span>
+      </div>
+    </div>
+  </section>
+</div>

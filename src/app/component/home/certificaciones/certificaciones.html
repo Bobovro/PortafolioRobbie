@@ -1,0 +1,125 @@
+<div class="cert-page">
+
+  <div class="cert-header">
+    <h2>Certificados</h2>
+    <button
+      class="back-btn"
+      routerLink="/home"
+      aria-label="Volver a Home"
+    >
+      ← Regresar a Home
+    </button>
+  </div>
+
+  <!-- Carrusel -->
+  <section class="carousel">
+    <button class="nav-btn left" type="button" (click)="prev()" aria-label="Anterior">
+      ‹
+    </button>
+
+    <div class="frame" *ngIf="selected as s">
+      <img
+        class="frame-img"
+        [src]="s.img"
+        [alt]="s.nombre"
+        role="button"
+        tabindex="0"
+        (click)="openPreview()"
+        (keydown.enter)="openPreview()"
+        (keydown.space)="openPreview()"
+      >
+    </div>
+
+    <button class="nav-btn right" type="button" (click)="next()" aria-label="Siguiente">
+      ›
+    </button>
+  </section>
+
+  <!-- Nombre bajo la imagen -->
+  <div class="cert-name" *ngIf="selected as s">
+    {{ s.nombre }}
+  </div>
+
+  <!-- Filtro -->
+  <div class="filter">
+    <div class="filter-label">Filtro</div>
+
+    <div class="search">
+      <input
+        type="text"
+        placeholder="Buscar por nombre, issuer o tag"
+        [value]="query"
+        (input)="onQueryChange(($any($event.target)).value)"
+      >
+      <span class="search-ico">⌕</span>
+    </div>
+  </div>
+
+  <!-- Lista -->
+  <section class="list">
+    <div class="row" *ngFor="let c of filtrados" [class.active]="c.id === selectedId">
+      <button class="row-main" type="button" (click)="setSelected(c.id)">
+        <div class="row-title">{{ c.nombre }}</div>
+        <div class="row-sub">
+          <span *ngIf="c.issuer">{{ c.issuer }}</span>
+          <span *ngIf="c.fecha"> · {{ c.fecha }}</span>
+        </div>
+      </button>
+
+      <button class="row-action" type="button" (click)="openInfo(c.id)">
+        Ver información
+      </button>
+    </div>
+
+    <div class="empty" *ngIf="filtrados.length === 0">
+      No se encontraron certificados con “{{ query }}”.
+    </div>
+  </section>
+
+  <!-- Modal -->
+  <div class="modal-backdrop" *ngIf="showInfo" (click)="closeInfo()"></div>
+
+  <div class="modal" *ngIf="showInfo && selected as s">
+    <div class="modal-top">
+      <div class="modal-title">{{ s.nombre }}</div>
+      <button class="modal-close" (click)="closeInfo()">✕</button>
+    </div>
+
+    <div class="modal-body">
+      <div><strong>Issuer:</strong> {{ s.issuer || '—' }}</div>
+      <div><strong>Fecha:</strong> {{ s.fecha || '—' }}</div>
+
+      <div class="modal-tags" *ngIf="s.tags?.length">
+        <span class="tag" *ngFor="let t of s.tags">{{ t }}</span>
+      </div>
+
+      <button class="modal-link" *ngIf="s.credUrl" (click)="openCredential(s.credUrl)">
+        Abrir credencial
+      </button>
+    </div>
+  </div>
+
+  <!-- Preview -->
+  <div class="preview-backdrop" *ngIf="showPreview" (click)="closePreview()"></div>
+
+  <div class="preview" *ngIf="showPreview">
+    <button class="preview-close" type="button" (click)="closePreview()" aria-label="Cerrar">
+      ✕
+    </button>
+
+    <div class="preview-content" (click)="$event.stopPropagation()">
+      <img
+        class="preview-img"
+        *ngIf="selected as s"
+        [src]="s.img"
+        [alt]="s.nombre"
+      >
+
+      <div class="preview-hint">
+        Presiona <kbd>ESC</kbd> para cerrar
+      </div>
+    </div>
+  </div>
+
+</div>
+

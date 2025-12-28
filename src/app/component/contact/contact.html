@@ -1,0 +1,126 @@
+<div class="page">
+  <header class="head">
+    <div class="title">
+      <h2>Contact</h2>
+      <p class="muted">Si quieres contactarme, aquí tienes mis enlaces directos o envíame un mensaje.</p>
+    </div>
+
+    <div class="status">
+      <span class="pill">
+        <mat-icon>bolt</mat-icon>
+        Disponible para prácticas
+      </span>
+      <span class="pill subtle">
+        <mat-icon>schedule</mat-icon>
+        24–48h respuesta
+      </span>
+    </div>
+  </header>
+
+  <!-- Links -->
+  <mat-card class="card">
+    <mat-card-content>
+      <div class="row">
+        <a class="item link" [href]="'mailto:' + toEmail">
+          <div class="icon"><mat-icon>mail</mat-icon></div>
+          <div class="meta">
+            <div class="label">Email</div>
+            <div class="sub">{{ toEmail }}</div>
+          </div>
+          <mat-icon class="go">arrow_forward</mat-icon>
+        </a>
+
+        <a class="item link" [href]="linkedinUrl" target="_blank" rel="noreferrer">
+          <div class="icon"><mat-icon>work</mat-icon></div>
+          <div class="meta">
+            <div class="label">LinkedIn</div>
+            <div class="sub">Ver perfil</div>
+          </div>
+          <mat-icon class="go">arrow_forward</mat-icon>
+        </a>
+
+        <a class="item link" [href]="githubUrl" target="_blank" rel="noreferrer">
+          <div class="icon"><mat-icon>code</mat-icon></div>
+          <div class="meta">
+            <div class="label">GitHub</div>
+            <div class="sub">Ver repositorio</div>
+          </div>
+          <mat-icon class="go">arrow_forward</mat-icon>
+        </a>
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+  <!-- Form -->
+  <mat-card class="card formCard">
+    <mat-card-content>
+      <div class="env">
+      <h3>Envíame un mensaje</h3>
+      </div>
+      <p class="muted small">Podrás escribir el mensaje aquí directamente para enviar.</p>
+
+      <form class="form" [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="grid2">
+          <mat-form-field appearance="outline" class="field">
+            <mat-label>Nombre</mat-label>
+            <input matInput formControlName="name" autocomplete="name" />
+            <mat-error *ngIf="nameCtrl?.touched && nameCtrl?.invalid">
+              Ingresa tu nombre (mín. 2 caracteres).
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="field">
+            <mat-label>Email</mat-label>
+            <input matInput formControlName="email" autocomplete="email" />
+            <mat-error *ngIf="emailCtrl?.touched && emailCtrl?.invalid">
+              Ingresa un email válido.
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <mat-form-field appearance="outline" class="field">
+          <mat-label>Mensaje</mat-label>
+          <textarea
+            matInput
+            rows="6"
+            formControlName="message"
+            placeholder="Cuéntame en qué podemos colaborar..."
+          ></textarea>
+
+          <mat-hint align="end">
+            {{ (messageCtrl?.value?.length || 0) }}/600
+          </mat-hint>
+
+          <mat-error *ngIf="messageCtrl?.touched && messageCtrl?.invalid">
+            Escribe un mensaje (mín. 10 caracteres, máx. 600).
+          </mat-error>
+        </mat-form-field>
+
+        <div class="formActions">
+          <button
+            mat-raised-button
+            color="primary"
+            class="send"
+            type="submit"
+            [disabled]="form.invalid || sending"
+          >
+            <mat-icon>{{ sending ? 'hourglass_top' : 'send' }}</mat-icon>
+            {{ sending ? 'Preparando...' : 'Enviar' }}
+          </button>
+
+          <button mat-button type="button" class="ghost" (click)="resetForm()" [disabled]="sending">
+            Limpiar
+          </button>
+
+          <span class="ok" *ngIf="sent">
+            <mat-icon>check_circle</mat-icon>
+            Listo: correo preparado.
+          </span>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+  <footer class="foot muted small">
+    Gracias por visitar mi portafolio. Estoy siempre abierto a aprender y colaborar 🤝
+  </footer>
+</div>
