@@ -13,6 +13,8 @@ export const PROJECT_TAGS: ProjectTag[] = [
 export const GITHUB = 'https://github.com/Bobovro';
 export const MOVI_REPO = 'https://github.com/Bobovro/MoviWallet';
 export const MOVI_DEMO = 'https://bobovro.github.io/MoviWallet/';
+export const TASKFLOW_REPO = 'https://github.com/Bobovro/TaskFlow';
+export const TASKFLOW_DEMO = 'https://task-flow-delta-virid.vercel.app/';
 
 export const PROJECTS = [
   /* ===== FRONTEND ===== */
@@ -52,20 +54,20 @@ export const PROJECTS = [
         ],
       },
       {
-        title: 'Proyecto Angular',
-        subtitle: 'UI con rutas + formularios.',
+        title: 'TaskFlow',
+        subtitle: 'Gestor de tareas offline con UI moderna.',
         tag: 'Frontend',
-        icon: 'view_quilt',
-        stack: 'Angular • Material • Reactive Forms',
-        cover: 'assets/screens/angular.jpeg',
+        icon: 'checklist',
+        stack: 'Angular • Material • Reactive Forms • LocalStorage',
+        cover: '/screens/TaskFlowSS.jpeg',
         bullets: [
-          'Rutas y componentes.',
-          'Formularios reactivos.',
-          'Estados de carga y error.',
+          'CRUD de tareas (crear/editar/eliminar) con modal.',
+          'Estados: todo / doing / done + filtros.',
+          'Persistencia en LocalStorage (offline).',
         ],
         links: [
-          { label: 'GitHub', url: GITHUB, icon: 'code' },
-          { label: 'Demo', url: GITHUB, icon: 'open_in_new' },
+          { label: 'GitHub', url: TASKFLOW_REPO, icon: 'code' },
+          { label: 'Demo', url: TASKFLOW_DEMO, icon: 'open_in_new' },
         ],
       },
     ],
