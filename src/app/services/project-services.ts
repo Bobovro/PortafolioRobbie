@@ -31,9 +31,11 @@ export const PROJECTS = [
     ],
     links: [],
     long: [
-      'Proyecto MoviWallet:',
-      'Colección de proyectos enfocados en frontend.',
-      'UX, UI, responsive y micro-interacciones.',
+      'Proyectos destacados: MoviWallet y TaskFlow.',
+      '- Colección de aplicaciones frontend desarrolladas con enfoque en producto.',
+      '- Diseño UI/UX moderno, responsive y orientado a la experiencia de usuario.',
+      '- Implementación de flujos reales: landing de producto y gestor de tareas.',
+      '- Uso de buenas prácticas en componentes, estados, formularios y persistencia.',
     ],
     children: [
       {
