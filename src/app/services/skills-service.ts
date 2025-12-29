@@ -24,7 +24,7 @@ export const SKILL_GROUPS: SkillGroup[] = [
   {
     title: 'Base de Datos',
     items: [
-      { name: 'SQL Server', icon: '/icons/sqldeveloper-original.svg', level: 'Intermedio', percent: 75, details: ['Queries', 'JOINs', 'Modelado básico'] },
+      { name: 'SQL Server', icon: '/icons/microsoftsqlserver-original.svg', level: 'Intermedio', percent: 75, details: ['Queries', 'JOINs', 'Modelado básico'] },
       { name: 'MySQL', icon: '/icons/mysql-original.svg', level: 'Intermedio', percent: 72, details: ['CRUD + joins', 'Índices básicos', 'Diseño relacional'] },
       { name: 'PostgreSQL', icon: '/icons/postgresql-plain.svg', level: 'Intermedio', percent: 72, details: ['Consultas', 'Funciones básicas', 'Modelado'] },
       { name: 'MongoDB', icon: '/icons/mongodb-plain.svg', level: 'Básico', percent: 55, details: ['Documentos/colecciones', 'CRUD básico', 'Consultas simples'] },
