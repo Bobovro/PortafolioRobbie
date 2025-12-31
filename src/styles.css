@@ -1,7 +1,5 @@
 @import '@angular/material/prebuilt-themes/indigo-pink.css';
 
-/* ===== Background global degradado (azul) ===== */
-
 html, body {
   height: 100%;
 }
@@ -9,7 +7,6 @@ html, body {
 body {
   margin: 0;
   color: #e5e7eb;
-  /* Imagen de fondo */
   background-image: linear-gradient( rgba(6, 10, 40, 0.85), rgba(6, 10, 40, 0.85) ),
   url('assets/portafolio.jpg');
   background-size: cover;
@@ -20,7 +17,7 @@ body {
   overflow-x: hidden; line-height: 1.65;
   /* antes ~1.2 por defecto */
   letter-spacing: 0.15px;
-} /* (Opcional) Un glow suave en el fondo para darle profundidad */
+}
 
 body::before {
   content: "";
@@ -34,7 +31,6 @@ body::before {
   z-index: 0;
 }
 
-/* Asegura que tu app esté encima del glow */
 app-root {
   position: relative;
   z-index: 1;

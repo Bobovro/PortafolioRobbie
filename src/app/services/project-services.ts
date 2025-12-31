@@ -15,6 +15,8 @@ export const MOVI_REPO = 'https://github.com/Bobovro/MoviWallet';
 export const MOVI_DEMO = 'https://bobovro.github.io/MoviWallet/';
 export const TASKFLOW_REPO = 'https://github.com/Bobovro/TaskFlow';
 export const TASKFLOW_DEMO = 'https://task-flow-delta-virid.vercel.app/';
+export const PRODUCTREVIEWAPI_REPO = 'https://github.com/Bobovro/ProductReviewAPI';
+export const PRODUCTREVIEWAPI_ENDPOINT = 'https://github.com/Bobovro/ProductReviewAPI/blob/main/README.md';
 
 export const PROJECTS = [
   /* ===== FRONTEND ===== */
@@ -84,12 +86,13 @@ export const PROJECTS = [
     stack: 'Spring Boot • JPA • DTO/Service/Repo',
     bullets: [
       'CRUD con validaciones y manejo de errores.',
-      'Arquitectura por capas.',
-      'Documentación de endpoints.',
+      'Autenticación y autorización con JWT.',
+      'DTOs y mapeo de entidades con ModelMapper.',
+      'Documentación de endpoints y ReadME.',
     ],
     links: [
-      { label: 'GitHub', url: GITHUB, icon: 'code' },
-      { label: 'Endpoints', url: GITHUB, icon: 'article' },
+      { label: 'GitHub', url: PRODUCTREVIEWAPI_REPO, icon: 'code' },
+      { label: 'Endpoints', url: PRODUCTREVIEWAPI_ENDPOINT, icon: 'article' },
     ],
   },
 
