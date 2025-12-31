@@ -1,6 +1,8 @@
 import {AuditItem} from '../model/auditoriamodel';
 
 export const AUDIT_ITEMS = [
+  { iso: '2025-12-30T23:53:14', type: 'Content', title: 'Nuevo Proyecto en Backend', description: 'Se añadió un nuevo proyecto en el Github.' },
+  { iso: '2025-12-29T20:17:55', type: 'Content', title: 'Nuevo Proyecto en Frontend', description: 'Se añadió un nuevo proyecto en Frontend.' },
   { iso: '2025-12-28T14:32:45', type: 'Fix', title: 'Responsive en Mobile', description: 'Se arregló el formato Responsive en Mobiles.' },
   { iso: '2025-12-27T11:49:20', type: 'Feature', title: 'Deployment en Vercel', description: 'Se logró subir la página web en Vercel sin ningún tipo de error.' },
   { iso: '2025-12-27T21:34:50', type: 'Feature', title: 'Mapa de referencia', description: 'Se agregó mapa Lima con zonas destacadas.' },
