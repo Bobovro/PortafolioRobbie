@@ -105,6 +105,7 @@ export const PROJECTS = [
     tag: 'Fullstack',
     icon: 'hub',
     stack: 'Angular • Spring Boot • Security • SQL',
+
     bullets: [
       'Frontend en Angular con autenticación JWT y control de roles.',
       'Backend en Spring Boot con API REST, seguridad y persistencia en PostgreSQL',
@@ -122,7 +123,7 @@ export const PROJECTS = [
     subtitle: 'Scripts útiles y reproducibles.',
     tag: 'Python',
     icon: 'terminal',
-    stack: 'Python • Pandas (opcional)',
+    stack: 'Python • Pandas',
     bullets: [
       'Limpieza y transformación de datos.',
       'Automatización de tareas.',
