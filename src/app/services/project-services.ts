@@ -17,6 +17,8 @@ export const TASKFLOW_REPO = 'https://github.com/Bobovro/TaskFlow';
 export const TASKFLOW_DEMO = 'https://task-flow-delta-virid.vercel.app/';
 export const PRODUCTREVIEWAPI_REPO = 'https://github.com/Bobovro/ProductReviewAPI';
 export const PRODUCTREVIEWAPI_ENDPOINT = 'https://github.com/Bobovro/ProductReviewAPI/blob/main/README.md';
+export const CREDIVIVIENDAAPI_REPO = 'https://github.com/Bobovro/CrediViviendaAPI';
+export const CREDIVIVIENDA_FRONT = 'https://github.com/Bobovro/CrediVivienda';
 
 export const PROJECTS = [
   /* ===== FRONTEND ===== */
@@ -98,19 +100,19 @@ export const PROJECTS = [
 
   /* ===== FULLSTACK ===== */
   {
-    title: 'Fullstack – Mini CRUD',
-    subtitle: 'Conexión Front ↔ Back.',
+    title: 'CrediVivienda',
+    subtitle: 'Conexión Front y Back.',
     tag: 'Fullstack',
     icon: 'hub',
-    stack: 'Angular • Spring Boot • SQL',
+    stack: 'Angular • Spring Boot • Security • SQL',
     bullets: [
-      'Frontend consumiendo API REST.',
-      'Back con endpoints y persistencia.',
-      'Proyecto completo de punta a punta.',
+      'Frontend en Angular con autenticación JWT y control de roles.',
+      'Backend en Spring Boot con API REST, seguridad y persistencia en PostgreSQL',
+      'Gestión de clientes, préstamos y cuotas con arquitectura por capas.',
     ],
     links: [
-      { label: 'Frontend', url: GITHUB, icon: 'code' },
-      { label: 'Backend', url: GITHUB, icon: 'code' },
+      { label: 'Frontend', url: CREDIVIVIENDAAPI_REPO, icon: 'code' },
+      { label: 'Backend', url: CREDIVIVIENDA_FRONT, icon: 'code' },
     ],
   },
 
