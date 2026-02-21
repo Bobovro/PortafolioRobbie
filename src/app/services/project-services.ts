@@ -112,8 +112,8 @@ export const PROJECTS = [
       'Gestión de clientes, préstamos y cuotas con arquitectura por capas.',
     ],
     links: [
-      { label: 'Frontend', url: CREDIVIVIENDAAPI_REPO, icon: 'code' },
-      { label: 'Backend', url: CREDIVIVIENDA_FRONT, icon: 'code' },
+      { label: 'Frontend', url: CREDIVIVIENDA_FRONT, icon: 'code' },
+      { label: 'Backend', url: CREDIVIVIENDAAPI_REPO, icon: 'code' },
     ],
   },
 
